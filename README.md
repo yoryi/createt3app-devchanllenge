@@ -66,15 +66,6 @@ cp .env.example .env
 pnpm db:push
 ```
 
-## Set up login providers
-
-This app has Discord and Google as login options. If you want to run it locally and be able to log in, you need to have one of these two options set up.
-
-Here's how to set up Google:
-
-- [Create a Google developer application](https://console.developers.google.com/apis/credentials)
-- Grab your client ID and client secret and add them to your `.env` file as `GOOGLE_OAUTH_CLIENT_ID` and `GOOGLE_OAUTH_CLIENT_SECRET`
-
 #### Deploy to Vercel
 
 Let's deploy the Next.js application to [Vercel](https://vercel.com/). If you have ever deployed a Turborepo app there, the steps are quite straightforward. You can also read the [official Turborepo guide](https://vercel.com/docs/concepts/monorepos/turborepo) on deploying to Vercel.
