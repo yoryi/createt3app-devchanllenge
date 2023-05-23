@@ -12,12 +12,12 @@ This repo uses the following technologies:
 - Turborepo
 - NextJS 13
 - React 18
-- Auth.js (formerly known as NextAuth.js) - Refactor after we confirm its working to use AWS Cognito.
 - Prisma
+- ESlint / Prettier
 - tRPC v10
 - TailwindCSS
+- Zustand & Immer
 - Vercel - Potentially switch to netlify for consistency across other projects.
-- Upstash - refactor for AWS
 
 DB
 
