@@ -58,7 +58,7 @@ model User {
   firstName String?
   lastName  String?
   password  String?
-  email     String? @unique
+  email     String?
   image     String?
 
   accounts Account[]

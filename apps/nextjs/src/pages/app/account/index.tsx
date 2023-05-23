@@ -12,6 +12,7 @@ import { toast } from "react-hot-toast";
 
 import { api } from "~/utils/api";
 import { Layout } from "~/components/layout/layout";
+import store from "~/store";
 
 const AccountPage: NextPage = () => {
   const [firstName, setFirstName] = useState("");
@@ -20,6 +21,7 @@ const AccountPage: NextPage = () => {
   const [password, setPassword] = useState("");
   const [profileImage, setProfileImage] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
+  const { name, setName } = store((state) => state);
 
   const { mutateAsync: updateUser, isLoading } = api.users.update.useMutation();
 

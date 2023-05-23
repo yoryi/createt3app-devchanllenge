@@ -15,13 +15,13 @@ export const usersRouter = createTRPCRouter({
       }),
     )
     .mutation(async ({ ctx, input }) => {
+      //Upload profile image to thirdparty...
       await ctx.prisma.user.create({
         data: {
           email: input.email,
           firstName: input.firstName,
           lastName: input.lastName,
           password: input.password,
-          image: input.image,
           name: `${input.firstName} ${input.lastName}`,
         },
       });
