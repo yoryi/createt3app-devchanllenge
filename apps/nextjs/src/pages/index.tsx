@@ -8,10 +8,7 @@ const Home: NextPage = () => {
     <>
       <Head>
         <title>Dev Challenge</title>
-        <meta
-          name="description"
-          content="AI workflows that run based on time and other triggers."
-        />
+        <meta name="description" content="Yoryi's dev challenge." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <HomePage />
