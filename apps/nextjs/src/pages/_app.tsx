@@ -6,7 +6,7 @@ import { SessionProvider } from "next-auth/react";
 import { Toaster } from "react-hot-toast";
 
 import { api } from "~/utils/api";
-import { OnboardingWrapper } from "~/context/onboarding";
+import { AccountWrapper } from "~/context/account/account";
 import "../styles/globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -17,7 +17,7 @@ const MyApp: AppType<{ session: Session | null }> = ({
 }) => {
   return (
     <SessionProvider session={session}>
-      <OnboardingWrapper>
+      <AccountWrapper>
         <div
           className={clsx(
             "h-full scroll-smooth font-sans antialiased",
@@ -25,10 +25,9 @@ const MyApp: AppType<{ session: Session | null }> = ({
           )}
         >
           <Toaster />
-
           <Component {...pageProps} />
         </div>
-      </OnboardingWrapper>
+      </AccountWrapper>
     </SessionProvider>
   );
 };

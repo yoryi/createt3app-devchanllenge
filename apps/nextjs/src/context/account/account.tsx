@@ -11,7 +11,7 @@ import { getLocalStorage, setLocalStorage } from "~/utils/helpers/localStorage";
  * Curriculum store
  */
 
-export type OnboardingContent = {
+export type AccountContent = {
   firstName: string;
   setFirstName: (firstName: string) => void;
   email: string;
@@ -21,7 +21,7 @@ export type OnboardingContent = {
   setGoal: (goal: string) => void;
 };
 
-const OnboardingContext = createContext<OnboardingContent>({
+const AccountContext = createContext<AccountContent>({
   firstName: "",
   setFirstName: () => undefined,
   email: "",
@@ -30,7 +30,7 @@ const OnboardingContext = createContext<OnboardingContent>({
   setGoal: () => undefined,
 });
 
-export function OnboardingWrapper({ children }: { children: React.ReactNode }) {
+export function AccountWrapper({ children }: { children: React.ReactNode }) {
   const [firstName, setFirstName] = useState<string>(() =>
     getLocalStorage("firstName", ""),
   );
@@ -51,7 +51,7 @@ export function OnboardingWrapper({ children }: { children: React.ReactNode }) {
     setLocalStorage("goal", goal);
   }, [goal]);
 
-  const sharedState: OnboardingContent = {
+  const sharedState: AccountContent = {
     firstName,
     setFirstName,
     email,
@@ -60,12 +60,12 @@ export function OnboardingWrapper({ children }: { children: React.ReactNode }) {
     setGoal,
   };
   return (
-    <OnboardingContext.Provider value={sharedState}>
+    <AccountContext.Provider value={sharedState}>
       {children}
-    </OnboardingContext.Provider>
+    </AccountContext.Provider>
   );
 }
 
-export function useOnboardingContext() {
-  return useContext(OnboardingContext);
+export function useAccountContext() {
+  return useContext(AccountContext);
 }
