@@ -15,7 +15,6 @@
     "@wove/auth": "*",
     "@wove/db": "*",
     "langchain": "^0.0.42",
-    "openai": "^3.1.0",
     "superjson": "1.12.2",
     "zod": "^3.20.2"
   },
